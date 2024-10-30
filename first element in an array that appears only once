@@ -1,0 +1,51 @@
+import  Java.util.*;
+class Test{
+    static int test_fn(int[] arr){
+        for(int i= 0;i< arr.length; i++)
+        {
+            int count= 0;
+            for(int j=0;j< arr.length; j++){
+                if(arr[i]==arr[j]){
+                    count++;
+
+                }
+            }
+            if(count==1){
+                return arr[i];
+            }
+        }
+        return -1;
+
+    }
+    public static void main(String[] args){
+        int[] arr= {2,3,5,4,5,3,4 };
+        System.out.println(test_fn(arr));
+    }
+}
+
+
+//
+Code Breakdown
+Imports: The java.util.* package is imported, though it’s not actually used in this code. It’s unnecessary here.
+
+Class and Method:
+
+The Test class contains a test_fn static method.
+The test_fn method takes an integer array (int[] arr) as an argument and returns an integer representing the first unique element in the array (i.e., the first element that appears exactly once).
+Inner Loop Logic:
+
+for (int i = 0; i < arr.length; i++): This loop iterates over each element in the array.
+int count = 0; initializes a count variable to track how many times the current element (arr[i]) appears in the array.
+The nested loop, for (int j = 0; j < arr.length; j++), checks each element in the array to count the occurrences of arr[i].
+if (arr[i] == arr[j]) checks if the current element arr[i] matches another element in the array (arr[j]). If it does, count is incremented.
+After the inner loop completes, if count == 1, it indicates that arr[i] appears only once in the array, so the method returns arr[i] immediately.
+Return Statement:
+
+If no unique element (appearing exactly once) is found after all iterations, the method returns -1, indicating that no such element exists.
+Example Execution
+With the array {2, 3, 5, 4, 5, 3, 4}:
+
+2 appears only once, so the test_fn method will return 2.
+Code Output
+The code prints 2, as it is the first unique element in the array.
+//
